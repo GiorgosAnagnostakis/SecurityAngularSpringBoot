@@ -1,0 +1,126 @@
+
+<div class="modal-body">
+
+    <h1 class="mb-3">Προϊόντα</h1>
+    <div class="row">
+        <div class="col">
+            <table
+      datatable
+      [dtOptions]="dtOptions"
+      [dtTrigger]="dtTrigger"
+      class="row-border hover"
+    >
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>
+                            Code
+                        </th>
+                        <th>
+                            Περιγραφή
+                        </th>
+                        <th>
+                            Τιμή
+                        </th>
+                        <th>
+                            Ποσότητα
+                        </th>
+
+                        <th>
+                            Πωλητής
+                        </th>
+
+                        <th class="center">
+                            Αγορά
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody *ngIf="products?.length != 0">
+                    <tr *ngFor="let product of products">
+                        <td>{{ product.id }}</td>
+                        <td>
+                            {{ product.code }}
+                        </td>
+                        <td>{{ product.description }}</td>
+
+                        <td>{{ product.price }}</td>
+
+                        <td>{{ product.quantity }}</td>
+
+                        <td>{{ product.user?.username }}</td>
+
+
+
+                        <td class="center">
+                            <button (click)="openUpdateModal(product.id)" class="btn btn-sm btn-outline-info">
+                                <fa-icon [icon]="faPlus"></fa-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <br>
+
+
+    <h1 class="mb-3">Αγορασμένα προϊόντα</h1>
+    <div class="row">
+        <div class="col">
+            <table
+      datatable
+      [dtOptions]="dtOptions"
+      [dtTrigger]="dtTriggerBought"
+      class="row-border hover"
+    >
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>
+                            Κωδικός
+                        </th>
+                        <th>
+                            Περιγραφή
+                        </th>
+                        <th>
+                            Τιμή
+                        </th>
+                        <th>
+                            Ποσότητα
+                        </th>
+
+                        <th>
+                            Πωλητής
+                        </th>
+
+
+                    </tr>
+                </thead>
+                <tbody *ngIf="products?.length != 0">
+                    <tr *ngFor="let transaction of boughtProducts">
+                        <td>{{ transaction?.id }}</td>
+                        <td>
+                            {{ transaction.product?.code }}
+                        </td>
+                        <td>{{ transaction.product?.description }}</td>
+
+                        <td>{{ transaction.product?.price }}</td>
+
+                        <td>{{ transaction?.quantity }}</td>
+
+                        <td>{{ transaction.seller?.username }}</td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    
+
+</div>

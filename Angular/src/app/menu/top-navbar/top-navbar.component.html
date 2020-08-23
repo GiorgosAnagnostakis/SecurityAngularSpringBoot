@@ -1,0 +1,96 @@
+<nav
+  class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary blur-shadow"
+>
+  <a
+    class="navbar-brand"
+    href="/"
+  >
+
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle white-bold faa-parent animated-hover"
+          data-toggle="dropdown"
+          href=""
+          role="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          i18n
+          >Προιόντα</a
+        >
+        <div class="dropdown-menu">
+          <a
+            class="dropdown-item faa-parent animated-hover"
+            href="products"
+            i18n
+            >Πώληση</a
+          >
+          <a
+            class="dropdown-item faa-parent animated-hover"
+            href="buyerproducts"
+            i18n
+            >Αγορά</a
+          >
+   
+        </div>
+      </li>
+
+ 
+    </ul>
+
+    <ul class="navbar-nav mr-5">
+        <li id="UserProfileMenu" class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle white-bold faa-parent animated-hover"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            ><img class="profile-img mr-1" />Profile</a
+          >
+          <div class="dropdown-menu">
+            <a class="dropdown-item centered" href="/userProfile/viewProfile">
+              <img class="profile-img-big"  />
+            </a>
+            <!-- <small class="dropdown-item disabled text-muted"
+              >Logged in as: <strong>{{ user.username }}</strong></small
+            > -->
+            <div class="dropdown-divider"></div>
+            <a
+              class="dropdown-item faa-parent animated-hover"
+              href="/userProfile/viewProfile"
+              >View Profile</a
+            >
+            <a
+              class="dropdown-item faa-parent animated-hover clickable"
+              id="logoutBtn"
+              (click)="logout()"
+              >Logout</a
+            >
+          </div>
+        </li>
+      </ul>
+    <a href="http://www.papei.gr/" target="_blank">
+      <img
+        style="width: 60px;"
+        class="navbar-brand"
+        src="https://www.ds.unipi.gr/wp-content/uploads/2019/04/University-of-Piraeus-Logo.png"
+        alt=""
+      />
+    </a>
+  </div>
+</nav>

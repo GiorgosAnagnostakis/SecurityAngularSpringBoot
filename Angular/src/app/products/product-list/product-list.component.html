@@ -1,0 +1,79 @@
+
+<div class="modal-body">
+
+    <h1 class="mb-3">Προϊόντα</h1>
+    <div class="row">
+        <div class="col">
+            <table
+      datatable
+      [dtOptions]="dtOptions"
+      [dtTrigger]="dtTrigger"
+      class="row-border hover"
+    >
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>
+                            Κωδικός
+                        </th>
+                        <th>
+                            Περιγραφή
+                        </th>
+                        <th>
+                            Τιμή
+                        </th>
+                        <th>
+                            Ποσότητα
+                        </th>
+
+                        <th>
+                            Πωλητής
+                        </th>
+
+                        <!-- <th id="deleteColumn" class="center">
+                            Delete
+                        </th> -->
+
+                    </tr>
+                </thead>
+                <tbody *ngIf="products?.length != 0">
+                    <tr *ngFor="let product of products">
+                        <td>{{ product.id }}</td>
+                        <td>
+                            {{ product.code }}
+                        </td>
+                        <td>{{ product.description }}</td>
+
+                        <td>{{ product.price }}</td>
+
+                        <td>{{ product.quantity }}</td>
+
+                        <td>{{ product.user?.username }}</td>
+
+
+<!-- 
+                        <td class="center">
+                            <button (click)="deleteProduct(product.id)" class="btn btn-sm btn-outline-danger">
+                                <fa-icon [icon]="faTrash"></fa-icon>
+                            </button>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary" (click)="openCreateProduct()">
+                <fa-icon [icon]="faPlus"></fa-icon>
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+</div>

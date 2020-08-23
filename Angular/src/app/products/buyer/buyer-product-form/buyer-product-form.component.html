@@ -1,0 +1,62 @@
+<form [formGroup]="productForm">
+    <div class="form-group">
+      <label for="productCode"
+        >Code</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="productCode"
+        formControlName="code"
+        [ngClass]="{ 'is-invalid': (code.dirty || code.touched) && code.errors }"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description"
+        >Description</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        formControlName="description"
+        [ngClass]="{ 'is-invalid': (description.dirty || description.touched) && description.errors }"
+      />
+    </div>
+
+    <div class="form-group">
+        <label for="price"
+          >Price</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="price"
+          formControlName="price"
+          [ngClass]="{ 'is-invalid': (price.dirty || price.touched) && price.errors }"
+        />
+      </div>
+    
+      <div class="form-group">
+        <label for="quantity"
+          >Quantity</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="quantity"
+          formControlName="quantity"
+          [ngClass]="{ 'is-invalid': (quantity.dirty || quantity.touched) && quantity.errors }"
+        />
+      </div>
+
+    <button
+      [disabled]="!productForm.valid"
+      (click)="submitForm()"
+      class="btn btn-success"
+      title="Submit"
+    >
+      <fa-icon [icon]="faCheck"></fa-icon>
+    </button>
+  </form>
+  

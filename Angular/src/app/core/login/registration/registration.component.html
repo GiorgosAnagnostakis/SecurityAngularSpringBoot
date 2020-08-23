@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-sm-3 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign up</h5>
+  
+          <form class="form-signin" [formGroup]="registrationForm">
+          
+            <div class="form-label-group">
+                <input
+                  type="username"
+                  id="inputUsername"
+                  class="form-control"
+                  placeholder="username"
+                  required
+                  formControlName="username"
+    
+                />
+                <label for="Username">Username</label>
+              </div>
+  
+            <div class="form-label-group">
+              <input
+                type="password"
+                id="inputPassword"
+                class="form-control"
+                placeholder="Password"
+                required
+                formControlName="password"
+  
+              />
+              <label for="inputPassword">Password</label>
+            </div>
+  
+            <div class="form-label-group">
+              <select
+                type="roles"
+                id="inputRoles"
+                class="form-control"
+                placeholder="Roles"
+                required
+                formControlName="roles"
+  
+              >
+              <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+            </select>
+              <label for="inputRoles">Role</label>
+            </div>
+
+            <button
+              class="btn btn-lg btn-primary btn-block text-uppercase mb-3"
+              type="submit"
+              (click)="signUp()"
+            >
+              Sign up
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

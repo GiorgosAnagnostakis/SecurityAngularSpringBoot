@@ -1,0 +1,14 @@
+<app-top-navbar *ngIf="loggedIn()"></app-top-navbar>
+<app-top-navbar-not-loggedin *ngIf="!loggedIn()"></app-top-navbar-not-loggedin>
+
+<div class="row my-5"></div>
+<div
+  class="container-fluid shadow-border top-border"
+  style="background-color:#F0F4F5;"
+>
+  <div class="row">
+    <div class="col-sm-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
