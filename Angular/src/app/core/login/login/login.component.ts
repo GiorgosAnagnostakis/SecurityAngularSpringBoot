@@ -15,8 +15,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
- // loginRequest: LoginRequest = {};
- token: Token;
+  token: Token;
 
  public href: string = "";
 
@@ -66,9 +65,10 @@ export class LoginComponent implements OnInit {
   navigate() {
     if (this.authenticationService.currentJwtPayloadValue.roles.includes('ROLE_SELLER') ) {
       this.router.navigateByUrl(`/products`)
-
     } else if (this.authenticationService.currentJwtPayloadValue.roles.includes('ROLE_BUYER') ) {
       this.router.navigateByUrl(`/buyerproducts`)
+    } else if (this.authenticationService.currentJwtPayloadValue.roles.includes('ROLE_ADMIN') ) {
+      this.router.navigateByUrl(`/welcome`)
     }
   }
   

@@ -22,17 +22,15 @@ export class BuyerProductListComponent implements OnInit {
   faTrashAlt = faTrashAlt;
 
   selectedProduct: Product;
+  ShowBoughtProducts: boolean = false;
 
   @ViewChild(DataTableDirective, { static: false }) dtElement: DataTableDirective;
-
-  @ViewChild(DataTableDirective, { static: false }) dtElementBought: DataTableDirective;
 
   boughtProducts: Product[];
 
   dtOptions: any = {};
   products: Product[];
   dtTrigger: Subject<Product> = new Subject();
-  dtTriggerBought: Subject<Product> = new Subject();
   ngbModalOptions: NgbModalOptions = {
     backdrop: 'static',
     keyboard: false
@@ -62,7 +60,6 @@ export class BuyerProductListComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
-    this.dtTriggerBought.unsubscribe();
   }
 
   openCreateProduct() {
@@ -88,10 +85,9 @@ export class BuyerProductListComponent implements OnInit {
       this.transactionControllerService.getAllTransactionsByBuyerUsingGET()
       .subscribe(
         data => {
-          console.log(data)
+          this.ShowBoughtProducts = false;
           this.boughtProducts = data;
-          this.dtTriggerBought.next();
-          console.log(data)
+          this.ShowBoughtProducts = true;
         }
       );
   }

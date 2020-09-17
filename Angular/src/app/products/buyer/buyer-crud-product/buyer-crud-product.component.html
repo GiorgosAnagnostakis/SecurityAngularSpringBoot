@@ -2,16 +2,14 @@
     <h4
       *ngIf="selectedProduct != null"
       class="modal-title"
-      i18n="Update Product Organization|Μodal Title for Product Organization Update @@healthOrganizationUpdateTitle"
     >
-    Update_Product_Organization 
+    Προιον 
     </h4>
     <h4
       *ngIf="selectedProduct == null"
       class="modal-title"
-      i18n="Create Product Organization|Μodal Title for Product Organization Create @@healthOrganizationCreateTitle"
     >
-    Create_Product_Organization
+    Προσθήκη
     </h4>
     <button
       type="button"
@@ -31,18 +29,9 @@
   <div class="modal-footer">
     <div class="btn-group" role="group" aria-label="Form Actions">
       <button
-        *ngIf="selectedProduct"
-        (click)="deleteProduct()"
-        class="btn btn-danger"
-        title="Delete Product Organization"
-      >
-        <fa-icon [icon]="faTrash"></fa-icon>
-      </button>
-      <button
         type="button"
         class="btn btn-outline-dark"
         (click)="activeModal.close(actionCompletedSuccessfully)"
-        i18n-title="Close|Title for button to close modal@@modalClose"
         title="Close"
       >
         <fa-icon [icon]="faDoorClosed"></fa-icon>

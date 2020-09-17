@@ -6,6 +6,7 @@ import com.example.asfaleia.model.User;
 import com.example.asfaleia.repository.TransactionRepository;
 import com.example.asfaleia.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -43,6 +44,10 @@ public class TransactionServiceImpl implements TransactionService {
     public Transaction createTransaction(Product product) {
 
         Product oldProduct = productService.getProductById(product.getId());
+
+        if (product.getQuantity() > oldProduct.getQuantity()){
+            return null;
+        }
         Transaction transaction = new Transaction();
 
         transaction.setProduct(product);

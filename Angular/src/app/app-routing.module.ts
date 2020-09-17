@@ -11,20 +11,22 @@ import { AccessdeniedComponent } from './core/accessdenied/accessdenied/accessde
 
 const routes: Routes = [
   
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegistrationComponent},
 
   { path: 'products', component: ProductListComponent,
     canActivate: [RoleGuard],
-    data: { expectedRole: ['ROLE_SELLER'] } },
+    data: { expectedRole: ['ROLE_SELLER','ROLE_ADMIN'] } },
     
   { path: 'buyerproducts', component: BuyerProductListComponent,
     canActivate: [RoleGuard],
-    data: { expectedRole: ['ROLE_BUYER'] } },
+    data: { expectedRole: ['ROLE_BUYER','ROLE_ADMIN'] } },
 
   { path: 'accessDenied', component: AccessdeniedComponent},
-  { path: 'welcome', component: WelcomeComponent}
- ,
+  { path: 'welcome', component: WelcomeComponent,
+  canActivate: [RoleGuard],
+  data: { expectedRole: ['ROLE_ADMIN'] }}
 
 
 

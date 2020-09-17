@@ -29,20 +29,20 @@
           role="button"
           aria-haspopup="true"
           aria-expanded="false"
-          i18n
+          
           >Προιόντα</a
         >
         <div class="dropdown-menu">
           <a
             class="dropdown-item faa-parent animated-hover"
             href="products"
-            i18n
+            
             >Πώληση</a
           >
           <a
             class="dropdown-item faa-parent animated-hover"
             href="buyerproducts"
-            i18n
+            
             >Αγορά</a
           >
    
@@ -60,26 +60,14 @@
             role="button"
             aria-haspopup="true"
             aria-expanded="false"
-            ><img class="profile-img mr-1" />Profile</a
+            ><img class="profile-img mr-1" />Προφίλ</a
           >
           <div class="dropdown-menu">
-            <a class="dropdown-item centered" href="/userProfile/viewProfile">
-              <img class="profile-img-big"  />
-            </a>
-            <!-- <small class="dropdown-item disabled text-muted"
-              >Logged in as: <strong>{{ user.username }}</strong></small
-            > -->
-            <div class="dropdown-divider"></div>
-            <a
-              class="dropdown-item faa-parent animated-hover"
-              href="/userProfile/viewProfile"
-              >View Profile</a
-            >
             <a
               class="dropdown-item faa-parent animated-hover clickable"
               id="logoutBtn"
               (click)="logout()"
-              >Logout</a
+              >Έξοδος</a
             >
           </div>
         </li>

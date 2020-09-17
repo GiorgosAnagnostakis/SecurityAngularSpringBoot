@@ -25,7 +25,7 @@ public class ProductController {
         return new ResponseEntity<>(productService.getProductById(id), HttpStatus.OK);
     }
 
-    @Secured({"ROLE_SELLER", "ROLE_BUYER"})
+    @Secured({"ROLE_SELLER", "ROLE_BUYER", "ROLE_ADMIN"})
     @GetMapping(path = "/products")
     ResponseEntity<List<Product>> getAllProducts() {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);

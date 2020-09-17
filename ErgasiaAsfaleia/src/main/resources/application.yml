@@ -18,8 +18,9 @@
 #      url: .*
 #      rate-limits:
 #        - bandwidths:
-#            - capacity: 5
+#            - capacity: 10
 #              time: 1
 #              unit: minutes
 #              fixed-refill-interval: 1
 #              fixed-refill-interval-unit: minutes
+#
