@@ -44,9 +44,9 @@ public class SwaggerConfig {
     public Docket swaggerSpringfoxDocket() {
         log.info("Starting Swagger");
         Contact contact = new Contact(
-                "IKnowHow",
-                "http://www.iknowhow.gr/home",
-                "iknowemail"
+                "test",
+                "test",
+                "test"
         );
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .pathMapping("/")

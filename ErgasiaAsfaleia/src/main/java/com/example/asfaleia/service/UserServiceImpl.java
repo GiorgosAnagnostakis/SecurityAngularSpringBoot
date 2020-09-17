@@ -60,7 +60,6 @@ public class UserServiceImpl implements UserService {
         Role role = roleRepository.findByName(signUpRequest.getRole())
                 .orElseThrow(() -> new EntityNotFoundException("Role not found"));
 
-        System.out.println("hello");
         Set<Role> roles = new HashSet<>();
         roles.add(role);
         user.setRoles(roles);
